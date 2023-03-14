@@ -8,14 +8,16 @@ import { CountryDetailsComponent } from './components/country-details/country-de
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SubdivisionComponent } from './components/subdivision/subdivision.component';
 @NgModule({
   declarations: [
     AppComponent,
     CountryListComponent,
-    CountryDetailsComponent
+    CountryDetailsComponent,
+    SubdivisionComponent,
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

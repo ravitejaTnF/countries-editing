@@ -1,1 +1,36 @@
-<p>works</p>
+<div class="main">
+    <div class="search-box mt-2">
+        <input type="text" class="form-control" 
+        [(ngModel)]="searchText" (ngModelChange)="filterData()">
+    </div>
+    <div class="buttons row">
+        <div class="col-2">
+            <button class="btn btn-primary btn-sm px-4" (click)="addSubdivision()">Add subdivision</button>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-dark btn-sm px-4" [routerLink]="['/countries']">Country list</button>
+        </div>
+        <div class="col-8"></div>
+    </div>
+    <div class="data-table mt-2">
+        <table *ngIf="!filteredDataAvailable">
+            <thead>
+                <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">Active</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of filteredItems">
+                    <td>{{item}}</td>
+                    <td>true</td>
+                    <td><a href="javascript:void(0)"(click)="editSubdivision(item)">Edit </a> | <a href="javascript:void(0)">In-active</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="filteredDataAvailable">
+            <h6>No countries available with your search!!</h6>
+        </div>
+    </div>
+</div>

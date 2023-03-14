@@ -1,0 +1,32 @@
+.main {
+    height: 100vh;
+  }
+  .search-box{
+      width: 50%;
+      border-radius: none;
+  }
+  table {
+    border: 1px solid #ccc;
+    width:100%
+  }
+  
+  thead {
+    margin-top: -2px
+  }
+  
+  th {
+    white-space: nowrap;
+    padding: 5px 10px;
+    text-align: left !important;
+    background-color: #dedede;
+    border: 1px solid #999;
+    border-bottom: 2px solid #6d9de2;
+    position: sticky;
+    top: -1px
+  }
+  
+  td {
+    padding: 5px 10px;
+    border: 1px solid #ccc
+  }
+  

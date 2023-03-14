@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import countries from '../counties.json';
 import { of } from 'rxjs';
+import * as states from '../states';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,5 +12,9 @@ export class CountyListService {
 
   getCountriesdata(){
     return of(countries);
+  }
+
+  getStatesBasedOnCountry(){
+    return of(states.states);
   }
 }

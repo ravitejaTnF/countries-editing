@@ -1,11 +1,11 @@
 <div class="main">
     <div class="search-box mt-2">
         <input type="text" class="form-control" 
-        [(ngModel)]="searchText">
-        <button (click)="filterData()" class="btn btn-sm btn-primary px-5 mt-2">Search</button>
+        [(ngModel)]="searchText" (ngModelChange)="filterData()">
+        <!-- <button (click)="filterData()" class="btn btn-sm btn-primary px-5 mt-2">Search</button> -->
     </div>
     <div class="data-table mt-2">
-        <table>
+        <table *ngIf="!filteredDataAvailable">
             <thead>
                 <tr>
                     <th scope="col">Country</th>
@@ -14,12 +14,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of countryData">
-                    <td>{{item.country}}</td>
+                <tr *ngFor="let item of filteredItems">
+                    <td>{{item.name}}</td>
                     <td>true</td>
                     <td><a href="javascript:void(0)"(click)="navigateTo(item)">Edit </a> | <a href="javascript:void(0)">In-active</a></td>
                 </tr>
             </tbody>
         </table>
+        <div *ngIf="filteredDataAvailable">
+            <h6>No countries available with your search!!</h6>
+        </div>
     </div>
 </div>
