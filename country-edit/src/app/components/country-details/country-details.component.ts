@@ -59,5 +59,10 @@ export class CountryDetailsComponent implements OnInit {
     }
     this._router.navigate(['/sub-division'],data);
   }
+  activeOrInactive(){
+    if(window.confirm('Are you sure you want to in-active this subdivision ?')){
+      window.alert('sub-division inactivated successfully!!');
+    }
+  }
 
 }

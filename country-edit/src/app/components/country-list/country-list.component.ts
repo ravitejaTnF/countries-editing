@@ -43,6 +43,12 @@ export class CountryListComponent implements OnInit {
     this._router.navigate(['/country-details'], countryDetails);
   }
 
+  inActive(){
+    if(window.confirm('Are you sure you want to in-active this country ?')){
+      window.alert('Country in-activation completed');
+    }
+  }
+
 
 
 }
